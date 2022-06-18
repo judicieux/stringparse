@@ -16,7 +16,6 @@ func main(){
 	colorRed := "\033[31m"
     colorGreen := "\033[32m"
 
-
 	sc := bufio.NewScanner(os.Stdin)
 
 	jobs := make(chan string)
@@ -41,9 +40,9 @@ func main(){
 	   			check_result := strings.Contains(sb , os.Args[1])
 	   			// fmt.Println(check_result)
 	   			if check_result != false {
-	   				fmt.Println(string(colorRed),"LFI Detected:", domain,string(colorReset))
+	   				fmt.Println("[",string(colorGreen),"Detected",string(colorReset),"]",string(colorGreen), domain, string(colorReset))
 	   			}else{
-	   				fmt.Println(string(colorGreen),"Nothing Detected:", domain, string(colorReset))
+	   				fmt.Println("[",string(colorRed),"Nothing",string(colorReset),"]",string(colorRed), domain, string(colorReset))
 	   			}
 
 			}
